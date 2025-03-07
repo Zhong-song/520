@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To My Sunshine</title>
-    <!-- Google Fonts -->
+    <title>送给亲爱的小代</title>
+    <!-- 引入字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Swiper.js -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- 引入Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- 引入Swiper -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+    <!-- 引入AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- 花瓣和爱心粒子容器 -->
-    <div class="particles-container">
-        <div class="petals"></div>
-        <div class="hearts"></div>
+    <!-- 音乐控制器 -->
+    <div class="music-controller">
+        <button class="music-toggle">
+            <i class="fas fa-music"></i>
+        </button>
     </div>
+    <!-- 背景音乐 -->
+    <audio id="background-music" loop>
+        <source src="music/qingtian.mp3" type="audio/mp3">
+    </audio>
+    <!-- 花瓣效果容器 -->
+    <div class="petals"></div>
+    
+    <!-- 主标题 -->
+    <header class="main-header">
+        <h1 data-aos="fade-down">送给亲爱的小代</h1>
+    </header>
 
-    <!-- 导航菜单 -->
+    <!-- 爱心导航菜单 -->
     <nav class="heart-menu">
         <a href="#memories" class="heart-link" data-aos="fade-left" data-aos-delay="100">
             <i class="fas fa-heart"></i>
@@ -38,81 +50,63 @@
         </a>
     </nav>
 
-    <!-- 动态标题 -->
-    <header class="main-header">
-        <h1 class="glow-text">To My Sunshine</h1>
-        <div class="flow-light"></div>
-    </header>
-
     <!-- 时光记忆轮播 -->
     <section id="memories" class="carousel-section memories-carousel">
-        <div class="carousel-container">
-            <div class="swiper memories-swiper">
-                <div class="swiper-wrapper">
-                    <!-- 轮播内容将通过JavaScript动态添加 -->
-                </div>
-                <div class="swiper-pagination timeline"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+        <div class="swiper memories-swiper">
+            <div class="swiper-wrapper">
+                <!-- 轮播内容将通过JavaScript动态添加 -->
             </div>
+            <div class="swiper-pagination timeline"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </section>
 
     <!-- 此刻浪漫轮播 -->
     <section id="romantic" class="carousel-section romantic-carousel">
-        <div class="carousel-container">
-            <div class="swiper romantic-swiper">
-                <div class="swiper-wrapper">
-                    <!-- 轮播内容将通过JavaScript动态添加 -->
-                </div>
-                <div class="swiper-pagination"></div>
+        <div class="swiper romantic-swiper">
+            <div class="swiper-wrapper">
+                <!-- 轮播内容将通过JavaScript动态添加 -->
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
     <!-- 未来约定轮播 -->
     <section id="future" class="carousel-section future-carousel">
-        <div class="carousel-container">
-            <div class="swiper future-swiper">
-                <div class="swiper-wrapper">
-                    <!-- 轮播内容将通过JavaScript动态添加 -->
-                </div>
-                <div class="swiper-scrollbar"></div>
+        <div class="swiper future-swiper">
+            <div class="swiper-wrapper">
+                <!-- 轮播内容将通过JavaScript动态添加 -->
             </div>
+            <div class="swiper-scrollbar"></div>
         </div>
     </section>
 
-    <!-- 时间胶囊模态框 -->
-    <div class="modal time-capsule-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>时间胶囊</h2>
-            <textarea placeholder="写下你对未来的承诺..."></textarea>
-            <button class="save-promise">保存承诺</button>
-        </div>
-    </div>
-
-    <!-- 照片查看模态框 -->
-    <div class="modal photo-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img src="" alt="照片大图">
-            <div class="photo-date"></div>
-        </div>
-    </div>
-
     <!-- 页脚区域 -->
-    <footer class="love-footer">
-        <div class="floating-hearts">
-            <!-- 动态爱心将通过JavaScript添加 -->
-        </div>
+    <footer class="main-footer">
+        <div class="floating-hearts"></div>
         <div class="secret-trigger"></div>
-        <audio id="blessing-audio" src="assets/blessing.mp3"></audio>
     </footer>
 
-    <!-- Scripts -->
+    <!-- 照片查看模态框 -->
+    <div class="photo-modal modal">
+        <span class="close-modal">&times;</span>
+        <img src="" alt="照片大图">
+        <div class="photo-date"></div>
+    </div>
+
+    <!-- 时间胶囊模态框 -->
+    <div class="time-capsule-modal modal">
+        <span class="close-modal">&times;</span>
+        <textarea placeholder="写下你的承诺..."></textarea>
+        <button class="save-promise">保存承诺</button>
+    </div>
+
+    <!-- 引入Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- 引入AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 自定义脚本 -->
     <script src="js/main.js"></script>
 </body>
 </html> 
